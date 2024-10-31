@@ -1,0 +1,74 @@
+
+/* Navbar Styles */
+.navbarr {
+    background-color: #c53838; /* Dark background */
+    color: rgb(238, 231, 231);
+    padding: 10px 20px; /* Padding for navbar */
+}
+
+.navbarr-container {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Max width for the navbar */
+    margin: 0 auto; /* Center the navbar */
+}
+
+.logo {
+    display: flex; /* Flexbox for logo */
+    align-items: center; /* Center logo vertically */
+}
+
+.wel{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-links ul {
+    list-style-type: none; /* Remove default list styles */
+    display: flex; /* Flexbox for horizontal links */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    color: rgb(247, 244, 244); /* Link color */
+    font-weight: 500;
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for links */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.nav-links a:hover {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+footer {
+    background-color: #20232a;
+    color: #61dafb;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    .navbarr-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width for links */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Space between links */
+    }
+}

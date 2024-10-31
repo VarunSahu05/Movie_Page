@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesm/style2.css">
+    <link rel="stylesheet" href="stylesm/style1.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Movie Design</title>
+</head>
+<body>
+    <header class="navbarr">
+        <div class="navbarr-container">
+            <div class="logo">
+                <p class="wel">Welcome, User</p>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Movie_Page</a></li>
+                    <li><a href="cast.html">Characters</a></li>
+                    <li><a href="trailer.html">Trailers</a></li>
+                    <li><a href="quote.html">Quote</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main style="background-image: url('https://wallpapercave.com/wp/wp2793107.jpg'); background-size: cover; padding-top: 10px; padding-bottom: 10px;">
+        <section class="quiz-container">
+            <h2>Test Your Marvel Knowledge!</h2>
+            <form id="quiz-form">
+                <p>Question 1: Who is the first Avenger?</p>
+                <label><input type="radio" name="question1" value="captainAmerica"> Captain America</label><br>
+                <label><input type="radio" name="question1" value="ironMan"> Iron Man</label><br>
+                <label><input type="radio" name="question1" value="thor"> Thor</label><br>
+
+                <p>Question 2: What is Thor's hammer called?</p>
+                <label><input type="radio" name="question2" value="stormbreaker"> Stormbreaker</label><br>
+                <label><input type="radio" name="question2" value="mjolnir"> Mjolnir</label><br>
+                <label><input type="radio" name="question2" value="glaive"> Glaive</label><br>
+
+                <p>Question 3: Who is Black Widow's real name?</p>
+                <label><input type="radio" name="question3" value="natashaRomanoff"> Natasha Romanoff</label><br>
+                <label><input type="radio" name="question3" value="wandaMaximoff"> Wanda Maximoff</label><br>
+                <label><input type="radio" name="question3" value="carolDanvers"> Carol Danvers</label><br>
+
+                <p>Question 4: In which movie did Spider-Man first appear in the MCU?</p>
+                <label><input type="radio" name="question4" value="civilWar"> Captain America: Civil War</label><br>
+                <label><input type="radio" name="question4" value="homecoming"> Spider-Man: Homecoming</label><br>
+                <label><input type="radio" name="question4" value="farFromHome"> Spider-Man: Far From Home</label><br>
+
+                <p>Question 5: Who is the main antagonist in "Avengers: Infinity War"?</p>
+                <label><input type="radio" name="question5" value="thanos"> Thanos</label><br>
+                <label><input type="radio" name="question5" value="loki"> Loki</label><br>
+                <label><input type="radio" name="question5" value="ultron"> Ultron</label><br>
+
+                <p>Question 6: In what year was the first Iron Man movie released?</p>
+                <label><input type="radio" name="question6" value="2008"> 2008</label><br>
+                <label><input type="radio" name="question6" value="2010"> 2010</label><br>
+                <label><input type="radio" name="question6" value="2012"> 2012</label><br>
+
+                <p>Question 7: What is the name of the organization that Nick Fury leads?</p>
+                <label><input type="radio" name="question7" value="Shield"> S.H.I.E.L.D</label><br>
+                <label><input type="radio" name="question7" value="Aim"> A.I.M</label><br>
+                <label><input type="radio" name="question7" value="HYDRA"> HYDRA</label><br>
+
+                <p>Question 8: Which Marvel superhero is from the planet Asgard?</p>
+                <label><input type="radio" name="question8" value="thor"> Thor</label><br>
+                <label><input type="radio" name="question8" value="hulk"> Hulk</label><br>
+                <label><input type="radio" name="question8" value="captainamerica"> Captain America</label><br>
+
+                <p>Question 9:  What is Spider-Man's secret identity?</p>
+                <label><input type="radio" name="question9" value="peterparker"> Peter Parker</label><br>
+                <label><input type="radio" name="question9" value="tonystark"> Tony Stark</label><br>
+                <label><input type="radio" name="question9" value="steverogers"> Steve Rogers</label><br>
+
+                <p>Question 10:  What is the name of the fictional African nation in Black Panther?</p>
+                <label><input type="radio" name="question10" value="krypton"> Krypton</label><br>
+                <label><input type="radio" name="question10" value="wakanda"> Wakanda</label><br>
+                <label><input type="radio" name="question10" value="asgard"> Asgard</label><br>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            <div id="result" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let score = 0;
+            let resultHTML = "<h3>Your Results:</h3>";
+
+            // Correct answers
+            const answers = {
+                question1: 'captainAmerica',
+                question2: 'mjolnir',
+                question3: 'natashaRomanoff',
+                question4: 'civilWar',
+                question5: 'thanos',
+                question6: '2008',
+                question7: 'Shield',
+                question8: 'thor',
+                question9: 'peterparker',
+                question10: 'wakanda'
+            };
+
+            // Check answers
+            for (let question in answers) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer) {
+                    if (userAnswer.value === answers[question]) {
+                        score++;
+                        resultHTML += `<p>${question.replace('question', '')}: Correct!</p>`;
+                    } else {
+                        // Display correct answer if wrong
+                        const correctAnswer = answers[question];
+                        resultHTML += `<p>${question.replace('question', '')}: Wrong! Correct answer is ${correctAnswer.replace(/([A-Z])/g, ' $1').trim()}.</p>`;
+                    }
+                } else {
+                    resultHTML += `<p>${question.replace('question', '')}: No answer provided.</p>`;
+                }
+            }
+
+            // Display the final score
+            resultHTML += `<p>Your score is ${score} out of ${Object.keys(answers).length}.</p>`;
+            document.getElementById('result').innerHTML = resultHTML;
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Marvel. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

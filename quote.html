@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesm/style2.css">
+    <link rel="stylesheet" href="stylesm/style1.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Movie Design</title>
+</head>
+<body>
+    <header class="navbarr">
+        <div class="navbarr-container">
+            <div class="logo">
+                <p class="wel">Welcome, User</p>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Movie_Page</a></li>
+                    <li><a href="cast.html">Characters</a></li>
+                    <li><a href="trailer.html">Trailers</a></li>
+                    <li><a href="quote.html">Quote</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="quote-container">
+            <div class="quote-display">
+                <p id="quote" class="quote"></p>
+            </div>
+            <button onclick="displayQuote()">Next</button>
+        </section>
+    </main>
+    <script>
+        const quotes = [
+            '"I am Iron Man." – Tony Stark',
+            '"With great power, comes great responsibility." – Uncle Ben',
+            '"I can do this all day." – Captain America',
+            '"We are Groot." – Groot',
+            '"I’m always angry." – Bruce Banner',
+            '"Avengers, assemble!" – Captain America',
+            '"Genius, billionaire, playboy, philanthropist." - Tony Stark (Iron Man)',
+            '"I am inevitable." - Thanos'
+        ];
+
+        function displayQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex];
+        }
+
+        // Call the function to display a quote on page load
+        window.onload = displayQuote;
+    </script>
+    <footer>
+        <p>&copy; 2024 Marvel. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
